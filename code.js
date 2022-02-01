@@ -72,7 +72,7 @@ inputs.forEach((input) => {
 
 // PRODUCTES
 
-function popupProductes(onoff,nom,preu){
+function popupProductes(onoff,nom,preu,desc,foto){
     if (onoff == "off") {
         document.getElementById('overlay-productes').style.visibility = "hidden";
     document.getElementById('popup-productes').style.visibility = "hidden";
@@ -81,5 +81,9 @@ function popupProductes(onoff,nom,preu){
         document.getElementById('overlay-productes').style.visibility = "visible";
         document.getElementById('popup-productes').style.visibility = "visible";
         document.getElementById('popup-productes-desc-a').style.display = "flex";
+        document.getElementById('popup-productes-tittle-h4').innerHTML = nom;
+        document.getElementById('popup-productes-preu').innerHTML = preu;
+        document.getElementById('popup-productes-desc-p').innerHTML = desc;
+        document.getElementById('popup-productes-img-2').src = foto;
     }
 }

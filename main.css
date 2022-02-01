@@ -626,6 +626,12 @@ div#slider figure {
   font-size: 20px;
 }
 
+#popup-productes-desc-preu{
+  float: left;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
 #popup-productes-img-1,#popup-productes-img-2{
     float: left;
     width: 40%;
@@ -637,8 +643,9 @@ div#slider figure {
 }
 
 #popup-productes-desc-a{
-  margin-left: 40%;
   margin-top: 30%;
+  margin-right: 5%;
+  float:right;
   justify-content: center;
   color: white;
   width: 200px;
@@ -666,6 +673,13 @@ div#slider figure {
   height: 30px;
   float: right;
   margin: 15px;
+}
+
+#popup-productes-preu{
+  float: left;
+  margin-top: 100px;
+  margin-left: 0px;
+  font-size: 30px;
 }
 
 @media (max-width: 1000px){
@@ -730,7 +744,13 @@ div#slider figure {
     }
     #popup-productes-desc-a{
       margin: 0 auto;
-      margin-top: 30px;
+      margin-top: 70px;
+      float: none;
+    }
+    #popup-productes-preu{
+      font-size: 25px;
+      margin-top: 10px;
+      margin-left: 45%;
     }
     #popup-productes-desc-p{
       margin-top: -20px;
@@ -739,6 +759,10 @@ div#slider figure {
 }
 
 @media (max-width: 425px){
+  #popup-productes-preu{
+      margin-top: 10px;
+      margin-left: 40%;
+    }
     #popup-productes-cross{
       height: 20px;
       margin: 10px;
@@ -757,7 +781,7 @@ div#slider figure {
         width: 100%;
     }
     #popup-productes-desc-a{
-      margin-top: 30px;
+      margin-top: 50px;
     }
     #popup-productes-img-1{
       margin-left: 20%;
