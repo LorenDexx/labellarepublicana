@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="cat">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+
+    <title>L'abella republicana</title>
+    <link rel="shortcut icon" href="./img/logo-rodo.ico">
+
+    
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <header>
+        <a onclick="changePage('inici')" href="#" id="a-logo-rodo"><img class="logo-rodo" src="./img/logo-rodo.png" alt="logo"></a>
+        <a onclick="changePage('inici')" href="#" id="a-logo-large"><svg class="logo-large" xmlns="http://www.w3.org/2000/svg" width="943" height="138" viewBox="0 0 943 138"><text id="L_abella_republicana" data-name="L’abella republicana" class="cls-1" x="16.947" y="96">L’abella republicana</text></svg></a>
+
+        
+        <input type="checkbox" id="menu" class="nav-input">
+
+        <div class="nav-links">
+            <a onclick="changePage('qui-soc')" class="nav-item" href="#">Qui sóc?</a>
+            <a onclick="changePage('contacte')" class="nav-item" href="#">Contacte</a>
+            <a onclick="changePage('productes')" class="nav-item" href="#">Productes</a>
+        </div>
+        <a onclick="changePage('productes')" href="#" id="a-carro"><svg class="carro" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255)"><path d="M21.822 7.431A1 1 0 0 0 21 7H7.333L6.179 4.23A1.994 1.994 0 0 0 4.333 3H2v2h2.333l4.744 11.385A1 1 0 0 0 10 17h8c.417 0 .79-.259.937-.648l3-8a1 1 0 0 0-.115-.921zM17.307 15h-6.64l-2.5-6h11.39l-2.25 6z"></path><circle cx="10.5" cy="19.5" r="1.5"></circle><circle cx="17.5" cy="19.5" r="1.5"></circle></svg></a>
+        <label for="menu" class="nav-label">
+            <img src="./img/menu.svg" alt="menu" class="nav-img">
+        </label>
+    </header>
+
+
+    <div id="inici" class="">
+        
+        <div id="slider">
+            <figure>
+                <img class="provasrc" src="./img/slider-prova.png" alt="">
+                <img class="provasrc" src="./img/slider-prova.png" alt="">
+                <img class="provasrc" src="./img/slider-prova.png" alt="">
+                <img class="provasrc" src="./img/slider-prova.png" alt="">
+                <img class="provasrc" src="./img/slider-prova.png" alt="">
+            </figure>
+        </div>
+        <h2> 7 Varietats de mel</h2>
+        <hr id="hr-varietats">
+        <div id="varietats-mel">
+            <div onclick="popupVarietats('on','mil')" class="card-varietat">
+                <h3>Mel de Mil Flors</h3><img src="./img/milflors.png" alt="">
+            </div>
+            <div onclick="popupVarietats('on','farigola')" class="card-varietat">
+                <h3>Mel de Farigola</h3><img src="./img/farigola.png" alt="">
+            </div>
+            <div onclick="popupVarietats('on','romani')" class="card-varietat">
+                <h3>Mel de Romaní</h3><img src="./img/romani.png" alt="">
+            </div>
+            <div onclick="popupVarietats('on','tiler')" class="card-varietat">
+                <h3>Mel de Til·ler</h3><img src="./img/tiler.png" alt="">
+            </div>
+            <div onclick="popupVarietats('on','bruc')" class="card-varietat">
+                <h3>Mel de Bruc</h3><img src="./img/bruc.png" alt="">
+            </div>
+            <div onclick="popupVarietats('on','arboç')" class="card-varietat">
+                <h3>Mel d'Arboç</h3><img src="./img/arboç.png" alt="">
+            </div>
+            <div onclick="popupVarietats('on','castanyer')" class="card-varietat">
+                <h3>Mel de Castanyer</h3><img src="./img/castanyer.png" alt="">
+            </div>
+        </div>
+        <div onclick="popupVarietats('off')" id="overlay-varietats">
+            <div id="popup-varietats">
+                <div id="popup-vairetats-tittle"> <h4 id="popup-varietats-tittle-h4">Mel de mil flors</h4> </div>
+                <div id="popup-vairetats-desc">
+                    <p id="popup-vairetats-desc-p">És de les més completes, degut a la gran varietat dels diversos tipus de flors sense que n'hi hagi cap que
+                        destaqui. Sabor i color variable segons l'origen de les flors i lloc de procedència</p>
+                </div>
+                <img id="popup-vairetats-img" src="./img/farigola.png" alt="">
+                
+            </div>
+        </div>
+        <div id="la-mare">
+            <div id="la-mare-esquerra">
+                <p>Les arnes de L'abella republicana no tenen reina, sinó mare.</p> <br>
+                <p>La mare és molt més gran que les altres i si veuen que es fa vella, les obreres en fan néixer una de nova.</p> <br>
+                <p>En aquesta foto hi surt una mare de les meves arnes !</p>
+            </div>
+
+            <div id="la-mare-dreta">
+                <img src="./img/la-mare.jpg" alt="">
+            </div>
+        </div>
+        <div id="la-mare-responsive">
+            <img src="./img/la-mare.jpg" alt="">
+        </div>
+        <div id="footer">
+            <div id="footer-contact">
+                <a class="footer-contact-a" target="_blank" href="https://www.instagram.com/labellarepublicana/?hl=es"> <svg class="footer-contact-svg" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" ><path d="M20.947 8.305a6.53 6.53 0 0 0-.419-2.216 4.61 4.61 0 0 0-2.633-2.633 6.606 6.606 0 0 0-2.186-.42c-.962-.043-1.267-.055-3.709-.055s-2.755 0-3.71.055a6.606 6.606 0 0 0-2.185.42 4.607 4.607 0 0 0-2.633 2.633 6.554 6.554 0 0 0-.419 2.185c-.043.963-.056 1.268-.056 3.71s0 2.754.056 3.71c.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.043 1.268.056 3.71.056s2.755 0 3.71-.056a6.59 6.59 0 0 0 2.186-.419 4.615 4.615 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.187.043-.962.056-1.267.056-3.71-.002-2.442-.002-2.752-.058-3.709zm-8.953 8.297c-2.554 0-4.623-2.069-4.623-4.623s2.069-4.623 4.623-4.623a4.623 4.623 0 0 1 0 9.246zm4.807-8.339a1.077 1.077 0 0 1-1.078-1.078 1.077 1.077 0 1 1 2.155 0c0 .596-.482 1.078-1.077 1.078z"></path><circle cx="11.994" cy="11.979" r="3.003"></circle></svg> 
+                    <h6>@labellarepublicana</h6>
+                </a>
+                <a class="footer-contact-a" target="_blank" href="https://www.facebook.com/Labella-republicana-106614836535572/"> <svg class="footer-contact-svg" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"> <path d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h8.615v-6.96h-2.338v-2.725h2.338v-2c0-2.325 1.42-3.592 3.5-3.592.699-.002 1.399.034 2.095.107v2.42h-1.435c-1.128 0-1.348.538-1.348 1.325v1.735h2.697l-.35 2.725h-2.348V21H20a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1z"></path></svg>
+                    <h6>L'abella republicana</h6>
+                </a>
+                <a class="footer-contact-a" target="_blank" href="mailto:labellarepublicana@gmail.com"> <svg class="footer-contact-svg" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path d="M18.73,5.41l-1.28,1L12,10.46,6.55,6.37l-1.28-1A2,2,0,0,0,2,7.05V18.64A1.36,1.36,0,0,0,3.36,20H6.55V12.28L12,16.37l5.45-4.09V20h3.19A1.36,1.36,0,0,0,22,18.64V7.05A2,2,0,0,0,18.73,5.41Z"></path></svg>
+                    <h6>labellarepublicana@gmail.com</h6>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <div id="qui-soc" class="page">
+        <h1> Qui sóc?</h1>
+        <hr id="hr-quisoc">
+    </div>
+
+
+    <div id="contacte" class="page">
+        <div class="container-contacte">
+            <span class="big-circle"></span>
+            <img src="img/shape.png" class="square" alt="" />
+            <div class="form">
+                <div class="contact-info">
+                    <h3 class="title">Let's get in touch</h3>
+                    <p class="text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+                        dolorum adipisci recusandae praesentium dicta!
+                    </p>
+        
+                    <div class="info">
+                        <div class="information">
+                            <svg style="fill: #CD6814; width:40px; margin-right: 10px;" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><g><g><path d="M461.913,83.478H50.087C22.467,83.478,0,105.974,0,133.565v244.87c0,27.622,22.498,50.087,50.087,50.087h411.826c27.578,0,50.087-22.453,50.087-50.087v-244.87C512,105.984,489.543,83.478,461.913,83.478z M460.563,116.87c-8.494,8.494-186.871,186.871-192.757,192.758c-6.527,6.526-17.085,6.526-23.612,0C238.303,303.735,59.927,125.36,51.437,116.87H460.563z M33.391,377.085V146.046l115.519,115.519L33.391,377.085z M62.567,395.13l109.954-109.954l48.061,48.061c19.526,19.528,51.304,19.529,70.834,0l48.061-48.061L449.432,395.13H62.567z M478.609,377.085L363.089,261.565l115.519-115.519V377.085z" /></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+                            
+                            <p>labellarepublicana@gmail.com</p>
+                        </div>
+                    </div>
+        
+                    <div class="social-media">
+                        <p>Segueix-me a :</p>
+                        <div class="social-icons">
+                            <a target="_blank" href="https://www.facebook.com/Labella-republicana-106614836535572/">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" style="fill: white;margin-top: 5px;"><path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"></path></svg>
+                            </a>
+                            <a target="_blank" href="https://www.instagram.com/labellarepublicana/?hl=es">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" style="fill: white;margin-top: 5px;"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"></path><circle cx="16.806" cy="7.207" r="1.078"></circle><path d="M20.533 6.111A4.605 4.605 0 0 0 17.9 3.479a6.606 6.606 0 0 0-2.186-.42c-.963-.042-1.268-.054-3.71-.054s-2.755 0-3.71.054a6.554 6.554 0 0 0-2.184.42 4.6 4.6 0 0 0-2.633 2.632 6.585 6.585 0 0 0-.419 2.186c-.043.962-.056 1.267-.056 3.71 0 2.442 0 2.753.056 3.71.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.042 1.268.055 3.71.055s2.755 0 3.71-.055a6.615 6.615 0 0 0 2.186-.419 4.613 4.613 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.186.043-.962.056-1.267.056-3.71s0-2.753-.056-3.71a6.581 6.581 0 0 0-.421-2.217zm-1.218 9.532a5.043 5.043 0 0 1-.311 1.688 2.987 2.987 0 0 1-1.712 1.711 4.985 4.985 0 0 1-1.67.311c-.95.044-1.218.055-3.654.055-2.438 0-2.687 0-3.655-.055a4.96 4.96 0 0 1-1.669-.311 2.985 2.985 0 0 1-1.719-1.711 5.08 5.08 0 0 1-.311-1.669c-.043-.95-.053-1.218-.053-3.654 0-2.437 0-2.686.053-3.655a5.038 5.038 0 0 1 .311-1.687c.305-.789.93-1.41 1.719-1.712a5.01 5.01 0 0 1 1.669-.311c.951-.043 1.218-.055 3.655-.055s2.687 0 3.654.055a4.96 4.96 0 0 1 1.67.311 2.991 2.991 0 0 1 1.712 1.712 5.08 5.08 0 0 1 .311 1.669c.043.951.054 1.218.054 3.655 0 2.436 0 2.698-.043 3.654h-.011z"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="contact-form">
+                    <span class="circle one"></span>
+                    <span class="circle two"></span>
+        
+                    <form action="index.html" autocomplete="off">
+                        <h3 class="title">Contacta'm</h3>
+                        <div class="input-container">
+                            <input type="text" name="name" class="input" />
+                            <label for="">Nom i cognom</label>
+                            <span>Nom i cognom</span>
+                        </div>
+                        <div class="input-container">
+                            <input type="email" name="email" class="input" />
+                            <label for="">E-mail</label>
+                            <span>E-mail</span>
+                        </div>
+                        <div class="input-container">
+                            <input type="tel" name="phone" class="input" />
+                            <label for="">Telefon (no obligatori)</label>
+                            <span>Telefon (no obligatori)</span>
+                        </div>
+                        <div class="input-container textarea">
+                            <textarea name="message" class="input"></textarea>
+                            <label for="">Missatge</label>
+                            <span>Missatge</span>
+                        </div>
+                        <input type="submit" value="Enviar" class="btn" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="productes" class="page">
+        <div id="filtres"></div>
+        <div id="productes-all">
+            <div onclick="popupProductes('on')" class="card-productes">
+                <img src="./img/milflors.png" alt="">
+                <h3> 1000g Mil Flors </h3>
+                <p>10 €</p>
+            </div>
+            <div onclick="popupProductes('on')" class="card-productes">
+                <img src="./img/milflors.png" alt="">
+                <h3> 1000g Mil Flors </h3>
+                <p>10 €</p>
+            </div>
+            <div onclick="popupProductes('on')" class="card-productes">
+                <img src="./img/milflors.png" alt="">
+                <h3> 1000g Mil Flors </h3>
+                <p>10 €</p>
+            </div>
+        </div>
+        <div onclick="popupProductes('off')" id="overlay-productes">
+            <div id="popup-productes">
+                <div id="popup-vairetats-tittle">
+                    <h4>1000g Mil Flors</h4>
+                </div>
+                <div id="popup-vairetats-desc">
+                    <p id="popup-vairetats-desc-p">És de les més completes, degut a la gran varietat dels diversos tipus de
+                        flors sense que n'hi hagi cap que
+                        destaqui. Sabor i color variable segons l'origen de les flors i lloc de procedència</p>
+                </div>
+                <img id="popup-vairetats-img" src="./img/farigola.png" alt="">
+        
+            </div>
+        </div>
+    </div>
+    <script src="./code.js"></script>
+</body>
+</html>
