@@ -28,7 +28,7 @@
             <a onclick="changePage('contacte')" class="nav-item" href="#">Contacte</a>
             <a onclick="changePage('productes')" class="nav-item" href="#">Productes</a>
         </div>
-        <a onclick="changePage('productes')" href="#" id="a-carro"><svg class="carro" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255)"><path d="M21.822 7.431A1 1 0 0 0 21 7H7.333L6.179 4.23A1.994 1.994 0 0 0 4.333 3H2v2h2.333l4.744 11.385A1 1 0 0 0 10 17h8c.417 0 .79-.259.937-.648l3-8a1 1 0 0 0-.115-.921zM17.307 15h-6.64l-2.5-6h11.39l-2.25 6z"></path><circle cx="10.5" cy="19.5" r="1.5"></circle><circle cx="17.5" cy="19.5" r="1.5"></circle></svg></a>
+        <a onclick="changePage('carro')" href="#" id="a-carro"><svg class="carro" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255)"><path d="M21.822 7.431A1 1 0 0 0 21 7H7.333L6.179 4.23A1.994 1.994 0 0 0 4.333 3H2v2h2.333l4.744 11.385A1 1 0 0 0 10 17h8c.417 0 .79-.259.937-.648l3-8a1 1 0 0 0-.115-.921zM17.307 15h-6.64l-2.5-6h11.39l-2.25 6z"></path><circle cx="10.5" cy="19.5" r="1.5"></circle><circle cx="17.5" cy="19.5" r="1.5"></circle></svg></a>
         <label for="menu" class="nav-label">
             <img src="./img/menu.svg" alt="menu" class="nav-img">
         </label>
@@ -204,6 +204,42 @@
                 <h3> 500g Til·ler </h3>
                 <p>10 €</p>
             </div>
+            <div onclick="popupProductes('on','1000g Til·ler','1000 €','Pot de mel de til·ler de 1000 grams.','./img/tiler.png')"
+                class="card-productes">
+                <img src="./img/tiler.png" alt="">
+                <h3> 500g Til·ler </h3>
+                <p>10 €</p>
+            </div>
+            <div onclick="popupProductes('on','1000g Til·ler','1000 €','Pot de mel de til·ler de 1000 grams.','./img/tiler.png')"
+                class="card-productes">
+                <img src="./img/tiler.png" alt="">
+                <h3> 500g Til·ler </h3>
+                <p>10 €</p>
+            </div>
+            <div onclick="popupProductes('on','1000g Til·ler','1000 €','Pot de mel de til·ler de 1000 grams.','./img/tiler.png')"
+                class="card-productes">
+                <img src="./img/tiler.png" alt="">
+                <h3> 500g Til·ler </h3>
+                <p>10 €</p>
+            </div>
+            <div onclick="popupProductes('on','1000g Til·ler','1000 €','Pot de mel de til·ler de 1000 grams.','./img/tiler.png')"
+                class="card-productes">
+                <img src="./img/tiler.png" alt="">
+                <h3> 500g Til·ler </h3>
+                <p>10 €</p>
+            </div>
+            <div onclick="popupProductes('on','1000g Til·ler','1000 €','Pot de mel de til·ler de 1000 grams.','./img/tiler.png')"
+                class="card-productes">
+                <img src="./img/tiler.png" alt="">
+                <h3> 500g Til·ler </h3>
+                <p>10 €</p>
+            </div>
+            <div onclick="popupProductes('on','1000g Til·ler','1000 €','Pot de mel de til·ler de 1000 grams.','./img/tiler.png')"
+                class="card-productes">
+                <img src="./img/tiler.png" alt="">
+                <h3> 500g Til·ler </h3>
+                <p>10 €</p>
+            </div>
         </div>
         <div id="overlay-productes">
             <div id="popup-productes">
@@ -215,13 +251,40 @@
                 <div id="popup-productes-desc">
                     <p id="popup-productes-desc-p"></p>
                     <p id="popup-productes-preu"></p>
-                    <a id="popup-productes-desc-a" href="">Comprar</a>
+                    <a id="popup-productes-desc-a" onclick="productesCarro()">Comprar</a>
                 </div>
                 <img id="popup-productes-img-2" src="./img/farigola.png" alt="">
         
             </div>
         </div>
     </div>
-    <script src="./code.js"></script>
+    <div id="carro">
+        <div id="carro-left">
+            <div id="carro-left-top">
+                <h4>Nom del producte</h4> 
+                <h4 style="margin-left: 60%;margin-top: -22px;">Preu</h4>
+                <h4 style="margin-left: 72%;margin-top: -22px;">Quantitat</h4>
+                <h4 style="margin-left: 90%;margin-top: -22px;">Total</h4>
+            </div>
+            <hr style="margin-bottom: 10px;">
+            <div class="carro-left-card">
+                <div class="carro-tittle">
+
+                </div>
+                <div class="carro-tittle-right">
+                    <div class="carro-desc">
+
+                    </div>
+                </div>
+                <!--<img class="carro-left-card-cross" src="./img/cross.png" alt="">-->
+            </div>
+        </div>
+        <div id="carro-right">
+            <div id="carro-right-card">
+                
+            </div>
+        </div>
+    </div>
+    <script src="./code.js" class="page"></script>
 </body>
 </html>

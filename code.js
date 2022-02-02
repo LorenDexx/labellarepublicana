@@ -11,6 +11,7 @@ function changePage(newPage) {
     document.getElementById('qui-soc').style.display = "none";
     document.getElementById('contacte').style.display = "none";
     document.getElementById('productes').style.display = "none";
+    document.getElementById('carro').style.display = "none";
     document.getElementById(page).style.display = "block";
     document.getElementById('menu').checked = false;
 }
@@ -85,5 +86,19 @@ function popupProductes(onoff,nom,preu,desc,foto){
         document.getElementById('popup-productes-preu').innerHTML = preu;
         document.getElementById('popup-productes-desc-p').innerHTML = desc;
         document.getElementById('popup-productes-img-2').src = foto;
+        document.getElementById('popup-productes-img-1').src = foto;
     }
+}
+
+let productes = []
+let producte = []
+
+function productesCarro(){
+    const nom = document.getElementById('popup-productes-tittle-h4').innerHTML
+    const preu = document.getElementById('popup-productes-preu').innerHTML
+    const desc = document.getElementById('popup-productes-desc-p').innerHTML
+    const foto = document.getElementById('popup-productes-img-2').innerHTML
+    producte = [nom,preu,desc,foto];
+    productes.push(producte);
+    console.log(productes)
 }
