@@ -1268,7 +1268,7 @@ textarea.input {
   margin-top: 10px;
 }
 
-#carro-right{
+.carro-right{
   margin-top: 80px;
   padding: 20px;
   float: right;
@@ -1277,7 +1277,7 @@ textarea.input {
   margin-right: 2%;
 }
 
-#carro-right-card{
+.carro-right-card{
     width: 100%;
     height: 300px;
     background-color: white;
@@ -1293,6 +1293,8 @@ textarea.input {
 }
 
 .carro-left-card{
+  padding-top: 20px;
+  padding-bottom: 20px;
   width: 100%;
   height: 250px;
   background-color: white;
@@ -1307,14 +1309,93 @@ textarea.input {
 
 .carro-tittle{
   height: 100%;
-  width: 25%;
+  width: 22%;
   float: left;
-  background-color: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .carro-tittle-right{
   height: 100%;
-  width: 75%;
+  width: 78%;
   float: right;
-  background-color: green;
+}
+
+#carro-tittle-img{
+  width: height;
+  height: 80%;
+  margin: 0 auto;
+}
+
+#carro-tittle-h3{
+  font-size: 20px;
+  margin: 0 auto;
+}
+
+.carro-desc{
+  height: 100%;
+  width: 45%;
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  float: left;
+}
+
+.carro-desc-right{
+  height: 100%;
+  width: 55%;
+  float: right;
+}
+
+.carro-preu{
+  height: 100%;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+}
+
+.carro-preu-right{
+  height: 100%;
+  width: 70%;
+  float: right;
+}
+
+.carro-quantitat{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  float: left;
+  justify-content: center;
+  align-items: center;
+}
+
+.carro-total{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  float: right;
+  justify-content: center;
+  align-items: center;
+}
+
+.carro-quantitat-input{
+  padding-left: 20px;
+  width: 70%;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 1em;
+  border: solid 1px;
+  border-color: #363636;
+}
+
+
+@media (max-width: 1200px){
+  #carro-left{
+    background-color: red;
+    width: 95%;
+  }
 }
