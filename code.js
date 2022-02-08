@@ -90,15 +90,119 @@ function popupProductes(onoff,nom,preu,desc,foto){
     }
 }
 
-let productes = []
-let producte = []
+//---------------- CARRO ----------------
+
+
+let carro = [];
+titleEquals = false;
 
 function productesCarro(){
-    const nom = document.getElementById('popup-productes-tittle-h4').innerHTML
-    const preu = document.getElementById('popup-productes-preu').innerHTML
-    const desc = document.getElementById('popup-productes-desc-p').innerHTML
-    const foto = document.getElementById('popup-productes-img-2').innerHTML
-    producte = [nom,preu,desc,foto];
-    productes.push(producte);
-    console.log(productes)
+    const itemTitle = document.getElementById('popup-productes-tittle-h4').innerHTML
+    const itemPrice = parseInt(document.getElementById('popup-productes-preu').innerHTML.split(" ")[0])
+    const itemDescription = document.getElementById('popup-productes-desc-p').innerHTML
+    const itemImg = document.getElementById('popup-productes-img-2').src
+    console.log(itemPrice)
+    const newItem = {
+        title: itemTitle,
+        description: itemDescription,
+        image: itemImg,
+        price: itemPrice,
+        priceforone: itemPrice,
+        quantity: 1
+    }
+    console.log(newItem)
+    for (var i = 0; i < carro.length; i++) {
+        if (newItem.title == carro[i].title) {
+            titleEquals = true;
+            carro[i].quantity = parseInt(carro[i].quantity) + parseInt(newItem.quantity)
+        }
+    }
+    if (titleEquals == false) {
+    carro.push(newItem)
+    console.log(carro)
+    }
+    renderCarro()
+    popupProductes("off");
+}
+
+function renderCarro(){
+    document.getElementById('elements-carro-num').innerHTML = carro.length
+    if (carro.length >= 9) {
+        document.getElementById('elements-carro-num').right = 90;
+    }else if(carro.length <= 10){
+        document.getElementById('elements-carro-num').right = 95;
+    }
+
+    carroProductesDelete = document.getElementById('carro2')
+    carroProductesDelete.remove()
+    carroBack = document.getElementById('carro1')
+    carroProductes = document.createElement('div')
+    carroProductes.setAttribute('id','carro2')
+    carroBack.append(carroProductes)
+
+    for (let i = 0; i < carro.length; i++) {
+        console.log("rederCarro for")
+        console.log(carro.length)
+        carro[i].price = carro[i].quantity * carro[i].priceforone
+
+        const Content = `
+                <div class="carro-tittle">
+                    <img class="carro-tittle-img" src="${carro[i].image}" alt="">
+                    <h3 class="carro-tittle-h3">${carro[i].title}</h3>
+                </div>
+                <div class="carro-tittle-right">
+                    <div class="carro-desc">
+                        <h3 class="carro-desc-h3">${carro[i].description}</h3>
+                    </div>
+                    <div class="carro-desc-right">
+                        <div class="carro-preu">
+                            <h3 class="carro-preu-h3">${carro[i].priceforone} €</h3>
+                        </div>
+                        <div class="carro-preu-right">
+                            <div class="carro-quantitat">
+                                <input class="carro-quantitat-input" max="99" min="1" value="${carro[i].quantity}" type="number">
+                            </div>
+            
+                            <div class="carro-total">
+                                <div class="carro-cross">
+                                    <img class="carro-cross-img" src="./img/cross.png" alt="">
+                                </div>
+                                <h3 class="carro-total-h3">${carro[i].price} €</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `
+        cardCarro = document.createElement('div')
+        cardCarro.classList.add('carro-left-card')
+        cardCarro.innerHTML = Content;
+        carroProductes.append(cardCarro)
+        cardCarro.querySelector(".carro-quantitat-input").addEventListener('change', sumaQuantitat)
+        cardCarro.querySelector(".carro-cross-img").addEventListener('click', removeItemCarro)
+    }
+}
+
+function sumaQuantitat(e){
+    const input = e.target
+    const card = input.closest(".carro-left-card")
+    const title = card.querySelector('.carro-tittle-h3').textContent;
+    for (let i = 0; i < carro.length; i++) {
+        if (title == carro[i].title) {
+            carro[i].quantity = input.value
+        }
+    }
+    renderCarro()
+}
+
+function removeItemCarro(e){
+    console.log("remove")
+    const input = e.target
+    const card = input.closest(".carro-left-card")
+    const title = card.querySelector('.carro-tittle-h3').textContent;
+    for (let i = 0; i < carro.length; i++) {
+        if (title == carro[i].title) {
+            carro.splice(i, 1)
+        }
+    }
+    renderCarro()
 }

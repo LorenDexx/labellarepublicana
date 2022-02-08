@@ -138,14 +138,41 @@ header{
     height: 50px;
     width: 50px;
     background-color: #CD6814;
+    z-index: 100;
 }
 
-.carro:hover{
-    fill: #cecece !important;
+.rodona-carro{
+  position: fixed;
+	display: flex;
+  right: 6.5%;
+    z-index: 0;
+    fill: white;
+    cursor: pointer;
+    margin-top: -15px;
 }
+
+#elements-carro-num{
+  position: fixed;
+	display: flex;
+  margin-top: -27px;
+  right: 7%;
+    z-index: 20;
+    cursor: pointer;
+}
+
 
 #a-carro{
+  margin-right: 1%;
     background-color: #CD6814;
+}
+
+@media (max-width: 500px){
+  .rodona-carro{
+    right: 45%;
+  }
+  #elements-carro-num{
+    right: 46.3%;
+  }
 }
 
 /* ---------------- PÀGINES ---------------- */
@@ -807,6 +834,7 @@ div#slider figure {
 }
 
 #popup-productes{
+  
     background: #F8F8F8;
     width: 700px;
     height: auto;
@@ -814,6 +842,7 @@ div#slider figure {
 	border-radius: 1em;
     margin-left: 20px;
     margin-right: 20px;
+    
 }
 
 /* ---------------- RESPONSIVE ---------------- */
@@ -1249,7 +1278,7 @@ textarea.input {
   margin-left: 2%;
   width: 71%;
   padding: 20px;
-  padding-top: 80px;
+  padding-top: 90px;
 }
 
 #carro-left-top{
