@@ -97,6 +97,11 @@ let carro = [];
 titleEquals = false;
 
 function productesCarro(){
+    document.getElementById('notificacio').style.transform = "translate(0,210px)";
+    setTimeout(() => {
+        document.getElementById('notificacio').style.transform = "translate(0,0px)";
+    }, 3000);
+
     const itemTitle = document.getElementById('popup-productes-tittle-h4').innerHTML
     const itemPrice = parseInt(document.getElementById('popup-productes-preu').innerHTML.split(" ")[0])
     const itemDescription = document.getElementById('popup-productes-desc-p').innerHTML
@@ -125,13 +130,11 @@ function productesCarro(){
     popupProductes("off");
 }
 
+
 function renderCarro(){
+    let totalPrice = 0;
+
     document.getElementById('elements-carro-num').innerHTML = carro.length
-    if (carro.length >= 9) {
-        document.getElementById('elements-carro-num').right = 90;
-    }else if(carro.length <= 10){
-        document.getElementById('elements-carro-num').right = 95;
-    }
 
     carroProductesDelete = document.getElementById('carro2')
     carroProductesDelete.remove()
@@ -140,10 +143,19 @@ function renderCarro(){
     carroProductes.setAttribute('id','carro2')
     carroBack.append(carroProductes)
 
+    carroRightProductesDelete = document.getElementById('carro-right-2')
+    carroRightProductesDelete.remove()
+    carroRightBack = document.getElementById('carro-right-1')
+    carroRightProductes = document.createElement('div')
+    carroRightProductes.setAttribute('id','carro-right-2')
+    carroRightBack.append(carroRightProductes)
+
     for (let i = 0; i < carro.length; i++) {
         console.log("rederCarro for")
         console.log(carro.length)
+        
         carro[i].price = carro[i].quantity * carro[i].priceforone
+        totalPrice = totalPrice + carro[i].price;
 
         const Content = `
                 <div class="carro-tittle">
@@ -179,7 +191,22 @@ function renderCarro(){
         carroProductes.append(cardCarro)
         cardCarro.querySelector(".carro-quantitat-input").addEventListener('change', sumaQuantitat)
         cardCarro.querySelector(".carro-cross-img").addEventListener('click', removeItemCarro)
+
+        const Content2 = `
+                <div class="div-producte-total-l">
+                                <p class="productes-total-l-p">${carro[i].title}</p>
+                            </div>
+                            <div class="div-producte-total-r">
+                                <p class="productes-total-r-p">${carro[i].price} €</p>
+                            </div>
+            `
+        cardRightCarro = document.createElement('div')
+        cardRightCarro.classList.add('div-producte-total')
+        cardRightCarro.innerHTML = Content2;
+        carroRightProductes.append(cardRightCarro)
+        
     }
+    document.getElementById('title-price').innerHTML = "Total: "+totalPrice+" €";
 }
 
 function sumaQuantitat(e){

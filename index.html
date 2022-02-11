@@ -196,12 +196,39 @@
 
 
     <div id="productes" class="page">
-        <div id="filtres"></div>
+        <div id="filtres">
+            <div id="notificacio">
+                <svg style="margin-top:25px;fill: white;" width="90px" height="90px" viewBox="0 0 24 24" version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M16.972 6.251c-.967-.538-2.185-.188-2.72.777l-3.713 6.682-2.125-2.125c-.781-.781-2.047-.781-2.828 0-.781.781-.781 2.047 0 2.828l4 4c.378.379.888.587 1.414.587l.277-.02c.621-.087 1.166-.46 1.471-1.009l5-9c.537-.966.189-2.183-.776-2.72z" />
+                </svg>
+                <h3 style="margin-top: -80px; color:white;margin-left: 90px;">S'ha afagit correctament</h3>
+                <a onclick="changePage('carro')" id="notificacio-a">Veure carro</a>
+            </div>
+        </div>
         <div id="productes-all">
             <div onclick="popupProductes('on','1000g Mil Flors','10 €','Pot de mel de mil flors de 1000 grams.','./img/milflors.png')" class="card-productes">
                 <img src="./img/milflors.png" alt="">
                 <h3> 1000g Mil Flors </h3>
                 <p>10 €</p>
+            </div>
+            <div onclick="popupProductes('on','500g Farigola','5 €','Pot de mel de farigola de 500 grams.','./img/farigola.png')"
+                class="card-productes">
+                <img src="./img/farigola.png" alt="">
+                <h3> 500g Farigola </h3>
+                <p>5 €</p>
+            </div>
+            <div onclick="popupProductes('on','500g Farigola','5 €','Pot de mel de farigola de 500 grams.','./img/farigola.png')"
+                class="card-productes">
+                <img src="./img/farigola.png" alt="">
+                <h3> 500g Farigola </h3>
+                <p>5 €</p>
+            </div>
+            <div onclick="popupProductes('on','500g Farigola','5 €','Pot de mel de farigola de 500 grams.','./img/farigola.png')"
+                class="card-productes">
+                <img src="./img/farigola.png" alt="">
+                <h3> 500g Farigola </h3>
+                <p>5 €</p>
             </div>
             <div onclick="popupProductes('on','500g Farigola','5 €','Pot de mel de farigola de 500 grams.','./img/farigola.png')"
                 class="card-productes">
@@ -244,11 +271,20 @@
             </div>
             
         </div>
+        <hr style="margin-bottom: 0px;margin-left: 2.5%;margin-right: 2.5%">
         <div id="carro-right">
             <div class="carro-right-card">
-                
+                <h2 id="carro-right-title">Resum</h2>
+                <div id="carro-right-1">
+                    <div id="carro-right-2">
+                        
+                    </div>
+                </div>
+                <h2 id="title-price"></h2>
+                <a class="button-carro">Comprar</a>
             </div>
         </div>
+        
     </div>
     <script src="./code.js" class="page"></script>
 </body>
