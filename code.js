@@ -95,12 +95,10 @@ function popupProductes(onoff,nom,preu,desc,foto){
 
 let carro = [];
 titleEquals = false;
+totalPrice = 0;
 
 function productesCarro(){
-    document.getElementById('notificacio').style.transform = "translate(0,210px)";
-    setTimeout(() => {
-        document.getElementById('notificacio').style.transform = "translate(0,0px)";
-    }, 3000);
+    titleEquals = false;
 
     const itemTitle = document.getElementById('popup-productes-tittle-h4').innerHTML
     const itemPrice = parseInt(document.getElementById('popup-productes-preu').innerHTML.split(" ")[0])
@@ -116,23 +114,30 @@ function productesCarro(){
         quantity: 1
     }
     console.log(newItem)
+    
     for (var i = 0; i < carro.length; i++) {
+        console.log(carro[0].title)
         if (newItem.title == carro[i].title) {
             titleEquals = true;
             carro[i].quantity = parseInt(carro[i].quantity) + parseInt(newItem.quantity)
         }
     }
     if (titleEquals == false) {
-    carro.push(newItem)
-    console.log(carro)
+        carro.push(newItem)
+        console.log("title equals")
     }
     renderCarro()
     popupProductes("off");
+
+    document.getElementById('notificacio').style.transform = "translate(0,210px)";
+    setTimeout(() => {
+        document.getElementById('notificacio').style.transform = "translate(0,0px)";
+    }, 3000);
 }
 
 
 function renderCarro(){
-    let totalPrice = 0;
+    totalPrice = 0;
 
     document.getElementById('elements-carro-num').innerHTML = carro.length
 
@@ -231,5 +236,19 @@ function removeItemCarro(e){
             carro.splice(i, 1)
         }
     }
+    renderCarro()
+}
+
+function comprar(){
+    prova = ""
+    console.log("comprar")
+    for (var i = 0; i < carro.length; i++) {
+        prova = prova + "%0A" + carro[i].quantity + " de " + carro[i].title + " --> " + carro[i].price + "€"
+    }
+    prova = prova + "%0A%0ATotal: " + totalPrice + "€"
+
+    mailContent = `mailto:labellarepublicana@gmail.com?subject=Comanda de mel&body=${prova}`
+    document.getElementById('button-carro').href = mailContent;
+    carro = []
     renderCarro()
 }
