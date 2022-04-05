@@ -211,7 +211,7 @@ h2{
 }
 /* SLIDER */
 
-div#slider { overflow: hidden; height: 400px; background-color: red; margin-bottom: 30px; } /* las imágenes no van a salir del márgen de la pantalla*/
+div#slider { overflow: hidden; height: 400px; margin-bottom: 30px; } /* las imágenes no van a salir del márgen de la pantalla*/
 div#slider figure img { width: 20%; float: left; margin-bottom: 15px; }
 
 div#slider figure { 
@@ -956,6 +956,7 @@ div#slider figure {
   padding-top: 80px;
   padding-left: 0%;
   padding-right: 0%;
+  height: 100%;
 }
 
 .container-contacte {

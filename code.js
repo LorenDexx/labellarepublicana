@@ -252,3 +252,40 @@ function comprar(){
     carro = []
     renderCarro()
 }
+
+function missatge(){
+    if (document.getElementById('name').value == ""){
+        if (document.getElementById('email').value == "" || !document.getElementById('email').value.includes("@")){
+            document.getElementById('name').style.border = "2px solid #be0000";
+            document.getElementById('name-label').style.color = "#be0000";
+            setTimeout(() => {
+                document.getElementById('name').style.border = "2px solid #fafafa";
+                document.getElementById('name-label').style.color = "white";
+            }, 2000);
+            document.getElementById('email').style.border = "2px solid #be0000";
+            document.getElementById('email-label').style.color = "#be0000";
+            setTimeout(() => {
+                document.getElementById('email').style.border = "2px solid #fafafa";
+                document.getElementById('email-label').style.color = "white";
+            }, 2000);
+        }else{
+            document.getElementById('name').style.border = "2px solid #be0000";
+            document.getElementById('name-label').style.color = "#be0000";
+            setTimeout(() => {
+                document.getElementById('name').style.border = "2px solid #fafafa";
+                document.getElementById('name-label').style.color = "white";
+            }, 2000);
+        }
+    }else if (document.getElementById('email').value == "" || !document.getElementById('email').value.includes("@")){
+        document.getElementById('email').style.border = "2px solid #be0000";
+        document.getElementById('email-label').style.color = "#be0000";
+        setTimeout(() => {
+            document.getElementById('email').style.border = "2px solid #fafafa";
+            document.getElementById('email-label').style.color = "white";
+        }, 2000);
+    }else{
+        mailContent = `mailto:labellarepublicana@gmail.com?subject=Contacte&body=${document.getElementById('message').value}%0A%0A${document.getElementById('name').value}%0A${document.getElementById('email').value}%0A${document.getElementById('phone').value}`
+        document.getElementById('button-missatge').href = mailContent;
+    }
+    
+}
