@@ -2,10 +2,10 @@
 let page = "inici";
 
 window.onload = function() {
-    changePage("inici")
+    changePage("inici","on")
 };
 
-function changePage(newPage) {
+function changePage(newPage,footer) {
     page = newPage
     document.getElementById('inici').style.display = "none";
     document.getElementById('qui-soc').style.display = "none";
@@ -14,9 +14,41 @@ function changePage(newPage) {
     document.getElementById('carro').style.display = "none";
     document.getElementById(page).style.display = "block";
     document.getElementById('menu').checked = false;
+    if (footer == "on"){
+        document.getElementById('footer').style.display = "block";
+    }else{
+        document.getElementById('footer').style.display = "none";
+    }
 }
 
 //---------------- INICI ------------------
+
+document.getElementById('facebook').addEventListener("mouseenter", function(event) {
+  event.target.querySelector('h6').style.color = "#6c6c6c";
+  event.target.querySelector('svg').style.fill = "#6c6c6c";
+  setTimeout(() => {
+        event.target.querySelector('h6').style.color = "black";
+        event.target.querySelector('svg').style.fill = "black";
+    }, 500);
+}, false);
+
+document.getElementById('instagram').addEventListener("mouseenter", function(event) {
+  event.target.querySelector('h6').style.color = "#6c6c6c";
+  event.target.querySelector('svg').style.fill = "#6c6c6c";
+  setTimeout(() => {
+        event.target.querySelector('h6').style.color = "black";
+        event.target.querySelector('svg').style.fill = "black";
+    }, 500);
+}, false);
+
+document.getElementById('gmail').addEventListener("mouseenter", function(event) {
+  event.target.querySelector('h6').style.color = "#6c6c6c";
+  event.target.querySelector('svg').style.fill = "#6c6c6c";
+  setTimeout(() => {
+        event.target.querySelector('h6').style.color = "black";
+        event.target.querySelector('svg').style.fill = "black";
+    }, 500);
+}, false);
 
 function popupVarietats(onoff, mel) {
     if (onoff == "off") {
@@ -254,21 +286,8 @@ function comprar(){
 }
 
 function missatge(){
-    if (document.getElementById('name').value == ""){
-        if (document.getElementById('email').value == "" || !document.getElementById('email').value.includes("@")){
-            document.getElementById('name').style.border = "2px solid #be0000";
-            document.getElementById('name-label').style.color = "#be0000";
-            setTimeout(() => {
-                document.getElementById('name').style.border = "2px solid #fafafa";
-                document.getElementById('name-label').style.color = "white";
-            }, 2000);
-            document.getElementById('email').style.border = "2px solid #be0000";
-            document.getElementById('email-label').style.color = "#be0000";
-            setTimeout(() => {
-                document.getElementById('email').style.border = "2px solid #fafafa";
-                document.getElementById('email-label').style.color = "white";
-            }, 2000);
-        }else{
+    if (document.getElementById('name').value == "" || document.getElementById('email').value == "" || !document.getElementById('email').value.includes("@") || document.getElementById('message').value == ""){
+        if (document.getElementById('name').value == ""){
             document.getElementById('name').style.border = "2px solid #be0000";
             document.getElementById('name-label').style.color = "#be0000";
             setTimeout(() => {
@@ -276,16 +295,24 @@ function missatge(){
                 document.getElementById('name-label').style.color = "white";
             }, 2000);
         }
-    }else if (document.getElementById('email').value == "" || !document.getElementById('email').value.includes("@")){
-        document.getElementById('email').style.border = "2px solid #be0000";
-        document.getElementById('email-label').style.color = "#be0000";
-        setTimeout(() => {
-            document.getElementById('email').style.border = "2px solid #fafafa";
-            document.getElementById('email-label').style.color = "white";
-        }, 2000);
+        if (document.getElementById('email').value == "" || !document.getElementById('email').value.includes("@")){
+            document.getElementById('email').style.border = "2px solid #be0000";
+            document.getElementById('email-label').style.color = "#be0000";
+            setTimeout(() => {
+                document.getElementById('email').style.border = "2px solid #fafafa";
+                document.getElementById('email-label').style.color = "white";
+            }, 2000);
+        }
+        if (document.getElementById('message').value == ""){
+            document.getElementById('message').style.border = "2px solid #be0000";
+            document.getElementById('message-label').style.color = "#be0000";
+            setTimeout(() => {
+                document.getElementById('message').style.border = "2px solid #fafafa";
+                document.getElementById('message-label').style.color = "white";
+            }, 2000);
+        }
     }else{
-        mailContent = `mailto:labellarepublicana@gmail.com?subject=Contacte&body=${document.getElementById('message').value}%0A%0A${document.getElementById('name').value}%0A${document.getElementById('email').value}%0A${document.getElementById('phone').value}`
+        mailContent = `mailto:labellarepublicana@gmail.com?subject=Contacte [${document.getElementById('name').value}]&body=${document.getElementById('message').value}%0A%0A${document.getElementById('name').value}%0A${document.getElementById('email').value}%0A${document.getElementById('phone').value}`
         document.getElementById('button-missatge').href = mailContent;
     }
-    
 }

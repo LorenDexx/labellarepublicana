@@ -509,11 +509,17 @@ div#slider figure {
     margin-top: 30px;
     padding-top: 50px;
     padding-left: 50px;
+    display: block;
 }
 
 #footer-contact{
     width: 45%;
     height: 100%;
+}
+
+.footer-contact-a{
+  height:40px;
+  cursor: pointer;
 }
 
 .footer-contact-a h6{
@@ -522,14 +528,6 @@ div#slider figure {
     margin-left: 45px;
     color: black;
     margin-bottom: 10px;
-}
-
-.footer-contact-a h6:hover{
-    color: #363636;
-}
-
-.footer-contact-svg:hover{
-    fill: #363636;
 }
 
 @media (max-width: 1000px){
@@ -590,6 +588,7 @@ div#slider figure {
 #productes{
   padding: 0px;
   padding-top: 80px;
+  height: auto;
 }
 
 #filtres{
@@ -644,12 +643,12 @@ div#slider figure {
 
 #productes-all{
     width: 100%;
-    height: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-block: 2rem;
     gap: 2rem;
+    margin-bottom: 100px;
 }
 
 .card-productes{
