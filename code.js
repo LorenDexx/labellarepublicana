@@ -1,10 +1,6 @@
 //---------------- PÀGINES ------------------
 let page = "inici";
 
-window.onload = function() {
-    changePage("inici","on")
-};
-
 function changePage(newPage,footer) {
     page = newPage
     document.getElementById('inici').style.display = "none";
@@ -19,6 +15,14 @@ function changePage(newPage,footer) {
     }else{
         document.getElementById('footer').style.display = "none";
     }
+    if (page == "productes"){
+        document.getElementById('input-buscador').value = "";
+        for (let i = 0; i < 28; i++) {
+        document.querySelectorAll('.card-productes')[i].style.display = "flex";
+        
+        }
+        document.getElementById('no-resultat-buscador').style.display = "none";
+    }
 }
 
 //---------------- INICI ------------------
@@ -27,29 +31,36 @@ function changePage(newPage,footer) {
 function popupVarietats(onoff, mel) {
     if (onoff == "off") {
         document.getElementById('overlay-varietats').style.visibility = "hidden";
-    document.getElementById('popup-varietats').style.visibility = "hidden";
+        document.getElementById('popup-varietats').style.visibility = "hidden";
     }else{
         document.getElementById('overlay-varietats').style.visibility = "visible";
         document.getElementById('popup-varietats').style.visibility = "visible";
         if (mel == "farigola") {
+            document.getElementById('popup-vairetats-img').src = "./img/farigola-50.png"
             document.getElementById('popup-varietats-tittle-h4').innerHTML = "Mel de Farigola";
             document.getElementById('popup-vairetats-desc-p').innerHTML = "La mel de farigola és indicada per problemes respiratoris de caràcter inflamatori com tos consulsiva i asma Antisèptica i eficaç en estats depressius. Reguladora de la tensió arterial."
         }else if (mel == "bruc") {
+            document.getElementById('popup-vairetats-img').src = "./img/bruc-50.png"
             document.getElementById('popup-varietats-tittle-h4').innerHTML = "Mel de Bruc";
             document.getElementById('popup-vairetats-desc-p').innerHTML = "La mel de bruc és diürètica, energitzant, reconstituent, rica en ferro, útil en anèmia, reumatisme, desmineralitzacions i produeix un efecte tònic al cos."
         }else if (mel == "castanyer") {
+            document.getElementById('popup-vairetats-img').src = "./img/castanyer-50.png"
             document.getElementById('popup-varietats-tittle-h4').innerHTML = "Mel de Castanyer";
             document.getElementById('popup-vairetats-desc-p').innerHTML = "La mel de castanyer estimula la circulació de la sang. Degut a que és una mica astrinyent, és apropiada en cas de diarrea."
         }else if (mel == "arboç") {
+            document.getElementById('popup-vairetats-img').src = "./img/arboç-50.png"
             document.getElementById('popup-varietats-tittle-h4').innerHTML = "Mel d'Arboç";
             document.getElementById('popup-vairetats-desc-p').innerHTML = "La mel d'arboç és una mel amargant. Antisèptica de les vies urinàries. Apropiada en cas d'asma i beneficiosa pel fetge."
         }else if (mel == "mil") {
+            document.getElementById('popup-vairetats-img').src = "./img/milflors-50.png"
             document.getElementById('popup-varietats-tittle-h4').innerHTML = "Mel de Mil Flors";
             document.getElementById('popup-vairetats-desc-p').innerHTML = "La mel de mil flors és de les més completes, degut a la gran varietat dels diversos tipius de flors, sense que n'hi hagi cap que destaqui. Sabor i color variable segons l'origen de les flors i lloc de procedència."
         }else if (mel == "romani") {
+            document.getElementById('popup-vairetats-img').src = "./img/romani-50.png"
             document.getElementById('popup-varietats-tittle-h4').innerHTML = "Mel de Romaní";
             document.getElementById('popup-vairetats-desc-p').innerHTML = "La mel de romaní és recomanable en trastorns hepàtics, acidesa, úlceres gàstriques i intestinals. Estimulant. Indicada en cas destrès i ansietat."
         }else if (mel == "tiler") {
+            document.getElementById('popup-vairetats-img').src = "./img/tiler-50.png"
             document.getElementById('popup-varietats-tittle-h4').innerHTML = "Mel de Til·ler";
             document.getElementById('popup-vairetats-desc-p').innerHTML = "La mel de til·ler és una mel sedant i relaxant. Afavoreix el descans nocturn. Alleuja el mal de cap i calma el tracte digestiu."
         }
@@ -217,7 +228,7 @@ function renderCarro(){
         carroRightProductes.append(cardRightCarro)
         
     }
-    document.getElementById('title-price').innerHTML = "Total: "+totalPrice+" €";
+    document.getElementById('title-price').innerHTML = "Total: "+totalPrice+" € *";
     addLocalStorage()
 }
 
@@ -252,7 +263,7 @@ function comprar(){
     for (var i = 0; i < carro.length; i++) {
         prova = prova + "%0A" + carro[i].quantity + " de " + carro[i].title + " --> " + carro[i].price + "€"
     }
-    prova = prova + "%0A%0ATotal: " + totalPrice + "€"
+    prova = prova + "%0A%0ATotal: " + totalPrice + "€ (enviament no inclòs)"
 
     mailContent = `mailto:labellarepublicana@gmail.com?subject=Comanda de mel&body=${prova}`
     document.getElementById('button-carro').href = mailContent;
@@ -300,12 +311,18 @@ document.getElementById('input-buscador').addEventListener('change', (event) => 
         document.querySelectorAll('.card-productes')[i].style.display = "flex";
         
         }
+        document.getElementById('no-resultat-buscador').style.display = "none";
     }else{
         for (let i = 0; i < 28; i++) {
         document.querySelectorAll('.card-productes')[i].style.display = "none";
         }
         for (let index = 0; index < document.querySelectorAll('.'+x).length; index++) {
             document.querySelectorAll('.'+x)[index].style.display = "flex";
+        }
+        if (document.querySelectorAll('.'+x).length <= 0) {
+            document.getElementById('no-resultat-buscador').style.display = "flex";
+        }else{
+            document.getElementById('no-resultat-buscador').style.display = "none";
         }
     }
 });
@@ -315,6 +332,7 @@ function addLocalStorage(){
 }
 
 window.onload = function(){
+    changePage("inici","on")
   const storage = JSON.parse(localStorage.getItem('carro'));
   if(storage){
     carro = storage;

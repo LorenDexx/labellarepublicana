@@ -192,8 +192,8 @@
                 <a onclick="changePage('carro')" id="notificacio-a">Veure carro</a>
             </div>
             <div id="buscador">
-                <input style="z-index: 1;" type="text" id="input-buscador">
-                <img onclick="document.getElementById('input-buscador').click()" style="position: relative;float: right;margin-top: -35px;margin-right: 10px;" height="30px" src="./img/buscador.png" alt="">
+                <input placeholder="Buscar un tipus de mel " style="z-index: 1;" type="text" id="input-buscador">
+                <img style="position: relative;float: right;margin-top: -35px;margin-right: 10px;" height="30px" src="./img/buscador.png" alt="">
             </div>
         </div>
         <div id="productes-all">
@@ -364,7 +364,11 @@
                 <h3> 1000g Castanyer </h3>
                 <p>11 €</p>
             </div>
+            <div style="display: none;" id="no-resultat-buscador">
+                <h3 id="h3-no-resultat-buscador">La cerca no ha obtingut cap resultat. Comprova que la varietat existeix i que està ben escrita.</h3>
+            </div>
         </div>
+        
         <div id="overlay-productes">
             <div id="popup-productes">
                 <img onclick="popupProductes('off')" id="popup-productes-cross" src="./img/cross.png" alt="">
@@ -389,6 +393,7 @@
                 <h4 id="carro-left-top-preu">Preu</h4>
                 <h4 id="carro-left-top-quantitat">Quantitat</h4>
                 <h4 id="carro-left-top-total">Total</h4>
+                
             </div>
             <hr style="margin-bottom: 10px;">
 
@@ -396,6 +401,7 @@
                 <div id="carro2">
                     
                 </div>
+                
             </div>
             
         </div>
@@ -409,6 +415,7 @@
                     </div>
                 </div>
                 <h2 id="title-price"></h2>
+                    <p style="font-size: 12px;">*Enviament no inclòs </p>
                 <a id="button-carro" onclick="comprar()" class="button-carro" href="">Comprar</a>
             </div>
         </div>
