@@ -592,7 +592,27 @@ div#slider figure {
 }
 
 #filtres{
-  height: 50px;
+  height: 60px;
+}
+
+#buscador{
+  width: 60%;
+  margin-left: 20%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+
+#input-buscador{
+  padding-left: 20px;
+  width: 100%;
+  height: 40px;
+  justify-content: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  border: solid 1px;
+  border-color: #363636;
 }
 
 #notificacio{

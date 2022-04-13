@@ -23,32 +23,6 @@ function changePage(newPage,footer) {
 
 //---------------- INICI ------------------
 
-document.getElementById('facebook').addEventListener("mouseenter", function(event) {
-  event.target.querySelector('h6').style.color = "#6c6c6c";
-  event.target.querySelector('svg').style.fill = "#6c6c6c";
-  setTimeout(() => {
-        event.target.querySelector('h6').style.color = "black";
-        event.target.querySelector('svg').style.fill = "black";
-    }, 500);
-}, false);
-
-document.getElementById('instagram').addEventListener("mouseenter", function(event) {
-  event.target.querySelector('h6').style.color = "#6c6c6c";
-  event.target.querySelector('svg').style.fill = "#6c6c6c";
-  setTimeout(() => {
-        event.target.querySelector('h6').style.color = "black";
-        event.target.querySelector('svg').style.fill = "black";
-    }, 500);
-}, false);
-
-document.getElementById('gmail').addEventListener("mouseenter", function(event) {
-  event.target.querySelector('h6').style.color = "#6c6c6c";
-  event.target.querySelector('svg').style.fill = "#6c6c6c";
-  setTimeout(() => {
-        event.target.querySelector('h6').style.color = "black";
-        event.target.querySelector('svg').style.fill = "black";
-    }, 500);
-}, false);
 
 function popupVarietats(onoff, mel) {
     if (onoff == "off") {
@@ -316,3 +290,25 @@ function missatge(){
         document.getElementById('button-missatge').href = mailContent;
     }
 }
+
+document.getElementById('input-buscador').addEventListener('change', (event) => {
+    
+    x = String(document.getElementById('input-buscador').value.split(" ")[0].toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""))
+    if (x == ""){
+        for (let i = 0; i < 28; i++) {
+        document.querySelectorAll('.card-productes')[i].style.display = "flex";
+        
+        }
+    }else{
+        for (let i = 0; i < 28; i++) {
+        document.querySelectorAll('.card-productes')[i].style.display = "none";
+        }
+        for (let index = 0; index < document.querySelectorAll('.'+x).length; index++) {
+            document.querySelectorAll('.'+x)[index].style.display = "flex";
+        }
+    }
+    
+    console.log("aqui:")
+    console.log(x)
+    
+});
