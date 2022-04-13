@@ -218,6 +218,7 @@ function renderCarro(){
         
     }
     document.getElementById('title-price').innerHTML = "Total: "+totalPrice+" €";
+    addLocalStorage()
 }
 
 function sumaQuantitat(e){
@@ -307,8 +308,16 @@ document.getElementById('input-buscador').addEventListener('change', (event) => 
             document.querySelectorAll('.'+x)[index].style.display = "flex";
         }
     }
-    
-    console.log("aqui:")
-    console.log(x)
-    
 });
+
+function addLocalStorage(){
+  localStorage.setItem('carro', JSON.stringify(carro))
+}
+
+window.onload = function(){
+  const storage = JSON.parse(localStorage.getItem('carro'));
+  if(storage){
+    carro = storage;
+    renderCarro()
+  }
+}
