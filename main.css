@@ -1597,6 +1597,51 @@ textarea.input {
   align-items: center;
 }
 
+.number-quantity-content {
+  display: flex;
+  border-color: #666 #666 #666 #666;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 20px 20px 20px 20px;
+  height: 40px;
+  width: 80px;
+  margin-left: 10px;
+}
+
+.number-quantity-button {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 30px;
+  height: 100%;
+  border-color: transparent;
+  background: transparent;
+}
+
+.number-quantity-input-content {
+  flex: 1;
+}
+
+.carro-quantitat-input::-webkit-outer-spin-button,
+.carro-quantitat-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+#number-quantity-espelma {
+  margin-top: 0px;
+  height: 100%;
+  width: 120%;
+  background-color: #f0f0f0;
+  border-color: transparent;
+  direction: none;
+  -webkit-user-select: none;
+  background: transparent;
+}
+
+#number-quantity-espelma:focus {
+  outline: 0;
+}
+
 .carro-cross{
   float: right;
   height: 20px;
@@ -1621,16 +1666,6 @@ textarea.input {
 
 .carro-total-h3{
   margin-top: 70px;
-  font-size: 18px;
-}
-
-.carro-quantitat-input{
-  padding-left: 15px;
-  width: 70%;
-  height: 40px;
-  border-radius: 20px;
-  border: solid 1px;
-  border-color: #363636;
   font-size: 18px;
 }
 
@@ -1667,9 +1702,6 @@ textarea.input {
     margin-left: 86%;
   }
   .carro-total-h3{
-    font-size: 15px;
-  }
-  .carro-quantitat-input{
     font-size: 15px;
   }
   .carro-desc-h3{
@@ -1716,5 +1748,11 @@ textarea.input {
   }
   #carro-right{
     width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  #number-quantity-espelma{
+    width: 20px;
   }
 }

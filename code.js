@@ -176,6 +176,11 @@ function renderCarro(){
         console.log("rederCarro for")
         console.log(carro.length)
         
+        if (carro[i].quantity <= 0){
+            carro[i].quantity = 1
+        }else if(carro[i].quantity >= 100){
+            carro[i].quantity = 99
+        }
         carro[i].price = carro[i].quantity * carro[i].priceforone
         totalPrice = totalPrice + carro[i].price;
 
@@ -194,7 +199,13 @@ function renderCarro(){
                         </div>
                         <div class="carro-preu-right">
                             <div class="carro-quantitat">
-                                <input class="carro-quantitat-input" max="99" min="1" value="${carro[i].quantity}" type="number">
+                                <div class="number-quantity-content">
+                                    <button onclick="mesormenys('menys',${i})" id="button-mes" class="number-quantity-button" type="button" name="button">-</button>
+                                        <div class="number-quantity-input-content">
+                                            <input onkeydown="enterEspelma(event)" id="number-quantity-espelma" type="number" class="carro-quantitat-input" max="99" min="0" step="1" value="${carro[i].quantity}" name="quantiat">
+                                        </div>
+                                    <button onclick="mesormenys('mes',${i})" id="button-menys" class="number-quantity-button" type="button" name="button">+</button>
+                                </div>
                             </div>
             
                             <div class="carro-total">
@@ -268,6 +279,15 @@ function comprar(){
     mailContent = `mailto:labellarepublicana@gmail.com?subject=Comanda de mel&body=${prova}`
     document.getElementById('button-carro').href = mailContent;
     carro = []
+    renderCarro()
+}
+
+function mesormenys(mesmenys, index){
+    if (mesmenys == "mes"){
+        carro[index].quantity = parseInt(carro[index].quantity) + 1
+    }else if(mesmenys == "menys"){
+        carro[index].quantity = parseInt(carro[index].quantity) - 1
+    }
     renderCarro()
 }
 
