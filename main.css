@@ -1634,7 +1634,6 @@ textarea.input {
   background-color: #f0f0f0;
   border-color: transparent;
   direction: none;
-  -webkit-user-select: none;
   background: transparent;
 }
 
